@@ -7,11 +7,22 @@ Mujeres que quieren generar ingresos desde casa, aunque no tengan experiencia pr
 Contactar por WhatsApp para consultar y comprar. El canal de venta es WhatsApp exclusivamente — no hay pasarela de pago en la landing.
 
 ## Productos disponibles
-Hay dos tipos de producto:
-1. **Ebooks en PDF** — múltiples títulos, precio varía según el/los que se elijan.
-2. **Mini app** — herramienta interactiva para gestionar el emprendimiento: calculadora de costos, metas de ventas, etc. Se vende por separado o como complemento.
 
-**Pendiente definir:** nombres de cada PDF, precios individuales y de bundle, y si la mini app está disponible ahora o es próximamente.
+1. **Ebook PDF #1 — "Bombones Fácil y Rentable"**
+   - 15 recetas
+
+2. **Ebook PDF #2 — "Bombonería Premium"**
+   - Inspirado en sabores de chocolates famosos
+   - 15 recetas
+   - Bono premium: 20 recetas de rellenos gourmet → posibilita 100 combinaciones adicionales
+
+3. **Mini App**
+   - Herramienta interactiva para gestionar el emprendimiento
+   - Calculadora de costos, metas de ventas, etc.
+
+4. **Próximamente: Ebook de Barritas de Cereal** (en desarrollo — no disponible aún)
+
+**Pendiente definir:** precios individuales y posibles bundles, número de WhatsApp, y si hay testimonios de compradoras.
 
 ## Sensación que debe provocar
 Inspiración y confianza. Debe sentir que ella también puede crear bombones hermosos y convertirlos en una oportunidad de negocio.
