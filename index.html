@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aprendé a hacer bombones hermosos y rentables desde casa. Ebooks paso a paso para emprendedoras de chocolatería." />
+  <title>ChocoEmprendé by Katy — Bombones que generan ingresos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --choc-dark:   #2C1503;
+      --choc:        #5C3317;
+      --choc-light:  #A67C52;
+      --gold:        #C9A84C;
+      --gold-light:  #E8C97A;
+      --gold-pale:   #FDF3DC;
+      --cream:       #FFF8F0;
+      --cream-dark:  #F0E0CC;
+      --white:       #FFFFFF;
+      --text:        #1A0E05;
+      --text-mid:    #4A3728;
+      --text-soft:   #7A6050;
+      --font-h:      'Playfair Display', Georgia, serif;
+      --font-b:      'Inter', system-ui, sans-serif;
+      --r:           12px;
+      --r-lg:        20px;
+      --sh:          0 4px 24px rgba(44,21,3,.10);
+      --sh-lg:       0 8px 40px rgba(44,21,3,.16);
+      --max:         1100px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--cream); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    h1,h2,h3 { font-family: var(--font-h); line-height: 1.25; color: var(--choc-dark); }
+    p { color: var(--text-mid); }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    section { padding: 80px 0; }
+    .tc { text-align: center; }
+
+    .label {
+      display: block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .divider {
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: var(--font-b);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--choc-dark);
+      box-shadow: 0 4px 20px rgba(201,168,76,.38);
+    }
+    .btn-gold:hover { box-shadow: 0 6px 28px rgba(201,168,76,.55); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--gold-light);
+      border: 2px solid rgba(201,168,76,.5);
+    }
+    .btn-ghost:hover { background: rgba(201,168,76,.12); }
+
+    .btn-outline-choc {
+      background: transparent;
+      color: var(--choc-light);
+      border: 2px dashed var(--choc-light);
+    }
+
+    .btn-lg { padding: 18px 36px; font-size: 1.1rem; }
+    .btn-lg svg { width: 24px; height: 24px; }
+    .btn-block { width: 100%; justify-content: center; }
+
+    /* ── FLOATING WA ── */
+    .float-wa {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      z-index: 999;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .float-wa:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.6); }
+    .float-wa svg { width: 32px; height: 32px; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(44,21,3,.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,.2);
+    }
+    nav {
+      max-width: var(--max); margin: 0 auto; padding: 0 24px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand {
+      font-family: var(--font-h);
+      font-size: 1.2rem;
+      color: var(--cream);
+    }
+    .brand span { color: var(--gold); }
+    .nav-btn { display: none; }
+    @media(min-width:600px){ .nav-btn { display: inline-flex; padding: 10px 20px; font-size: .9rem; } }
+
+    /* ── HERO ── */
+    #hero {
+      background: linear-gradient(155deg, var(--choc-dark) 0%, #4A2208 55%, #6B3A1A 100%);
+      padding: 100px 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; top: -140px; right: -140px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      text-align: center;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,76,.14);
+      border: 1px solid rgba(201,168,76,.38);
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: .05em;
+      margin-bottom: 28px;
+    }
+    #hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+    #hero h1 em { color: var(--gold-light); font-style: italic; }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,248,240,.78);
+      max-width: 540px; margin: 0 auto 40px;
+      line-height: 1.75;
+    }
+    .hero-actions {
+      display: flex; gap: 16px;
+      justify-content: center; flex-wrap: wrap;
+    }
+
+    /* ── PARA VOS ── */
+    #para-vos { background: var(--cream); }
+    #para-vos h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); margin-bottom: 14px; }
+    .intro { font-size: 1.05rem; max-width: 580px; margin: 0 auto 52px; line-height: 1.75; }
+
+    .grid-3 {
+      display: grid; gap: 24px;
+      grid-template-columns: 1fr;
+    }
+    @media(min-width:600px){ .grid-3 { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:900px){ .grid-3 { grid-template-columns: repeat(3,1fr); } }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      box-shadow: var(--sh);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
+
+    .card-icon {
+      width: 52px; height: 52px;
+      background: var(--gold-pale);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.55rem;
+      margin-bottom: 20px;
+    }
+    .card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+    .card p { font-size: .93rem; line-height: 1.65; }
+
+    /* ── BENEFICIOS ── */
+    #beneficios { background: var(--choc-dark); }
+    #beneficios .label { color: var(--gold-light); }
+    #beneficios h2 { color: var(--cream); font-size: clamp(1.7rem, 3.5vw, 2.4rem); margin-bottom: 14px; }
+    #beneficios .intro { color: rgba(255,248,240,.72); }
+
+    .ben-grid {
+      display: grid; gap: 20px;
+      grid-template-columns: 1fr;
+      max-width: 780px; margin: 0 auto;
+    }
+    @media(min-width:600px){ .ben-grid { grid-template-columns: repeat(2,1fr); } }
+
+    .ben-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(201,168,76,.15);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .ben-check {
+      width: 28px; height: 28px; flex-shrink: 0; margin-top: 2px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ben-check svg { width: 13px; height: 13px; color: var(--choc-dark); }
+    .ben-item p { color: rgba(255,248,240,.82); font-size: .95rem; line-height: 1.65; margin: 0; }
+    .ben-item strong { color: var(--cream); display: block; margin-bottom: 4px; }
+
+    /* ── PRODUCTOS ── */
+    #productos { background: var(--cream-dark); }
+    #productos h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); margin-bottom: 14px; }
+
+    .prod-grid {
+      display: grid; gap: 24px;
+      grid-template-columns: 1fr;
+      max-width: 880px; margin: 0 auto;
+    }
+    @media(min-width:600px){ .prod-grid { grid-template-columns: repeat(2,1fr); } }
+
+    .prod-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      box-shadow: var(--sh);
+      position: relative;
+      display: flex; flex-direction: column;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .prod-card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
+
+    .prod-card.featured { border: 2px solid var(--gold); }
+
+    .prod-card.bundle {
+      background: linear-gradient(155deg, var(--choc-dark) 0%, #4A2208 100%);
+      border: 2px solid var(--gold);
+      grid-column: 1 / -1;
+    }
+    @media(min-width:600px){
+      .prod-card.bundle { grid-column: auto; }
+    }
+
+    .prod-card.soon {
+      background: rgba(255,255,255,.5);
+      border: 2px dashed var(--choc-light);
+      grid-column: 1 / -1;
+      max-width: 420px; margin-left: auto; margin-right: auto; width: 100%;
+    }
+
+    .badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--choc-dark);
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 16px; border-radius: 50px;
+      white-space: nowrap;
+    }
+
+    .prod-emoji { font-size: 2.2rem; margin-bottom: 14px; }
+
+    .prod-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .prod-card.bundle h3 { color: var(--cream); }
+
+    .prod-desc {
+      font-size: .91rem; line-height: 1.65;
+      margin-bottom: 14px; flex-grow: 1;
+    }
+    .prod-card.bundle .prod-desc { color: rgba(255,248,240,.78); }
+
+    .bono-tag {
+      display: inline-block;
+      background: var(--gold-pale);
+      border: 1px solid var(--gold);
+      color: var(--choc);
+      font-size: .76rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .prod-card.bundle .bono-tag {
+      background: rgba(201,168,76,.14);
+      border-color: rgba(201,168,76,.4);
+      color: var(--gold-light);
+    }
+
+    .feat-list { list-style: none; margin-bottom: 22px; }
+    .feat-list li {
+      font-size: .87rem; color: var(--text-mid);
+      padding: 4px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .prod-card.bundle .feat-list li { color: rgba(255,248,240,.72); }
+    .feat-list li::before { content: '✦'; color: var(--gold); font-size: .6rem; flex-shrink: 0; }
+
+    .precio {
+      display: flex; align-items: baseline; gap: 4px;
+      margin-bottom: 20px;
+    }
+    .precio-sym { font-size: .95rem; font-weight: 600; color: var(--choc-light); }
+    .precio-val {
+      font-family: var(--font-h); font-size: 2.2rem; font-weight: 700;
+      color: var(--choc-dark); line-height: 1;
+    }
+    .precio-old { font-size: .95rem; color: var(--text-soft); text-decoration: line-through; margin-left: 6px; }
+    .prod-card.bundle .precio-sym { color: var(--gold); }
+    .prod-card.bundle .precio-val { color: var(--cream); }
+    .prod-card.bundle .precio-old { color: rgba(255,248,240,.38); }
+
+    .soon-label {
+      display: inline-block;
+      background: var(--cream-dark); color: var(--choc-light);
+      font-size: .73rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 50px;
+      margin-bottom: 12px;
+    }
+    .prod-card.soon h3 { color: var(--choc-light); }
+    .prod-card.soon .prod-desc { color: var(--text-soft); }
+
+    /* ── SOBRE MÍ ── */
+    #sobre-mi { background: var(--cream); }
+    .sm-inner {
+      display: grid; gap: 48px;
+      grid-template-columns: 1fr;
+      align-items: center;
+      max-width: 860px; margin: 0 auto;
+    }
+    @media(min-width:768px){ .sm-inner { grid-template-columns: 1fr 1fr; } }
+
+    .sm-visual {
+      width: 100%; aspect-ratio: 4/3;
+      background: linear-gradient(155deg, var(--choc) 0%, var(--choc-dark) 100%);
+      border-radius: var(--r-lg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      box-shadow: var(--sh-lg);
+      position: relative; overflow: hidden;
+    }
+    .sm-visual::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(155deg, rgba(201,168,76,.14) 0%, transparent 60%);
+    }
+
+    .sm-text h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 18px; }
+    .sm-text p { font-size: .96rem; line-height: 1.8; margin-bottom: 14px; }
+    .sm-text p:last-child { margin-bottom: 0; }
+
+    /* ── CTA FINAL ── */
+    #cta-final {
+      background: linear-gradient(155deg, var(--choc-dark) 0%, #4A2208 100%);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #cta-final::before {
+      content: ''; position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    #cta-final h2 {
+      color: var(--cream);
+      font-size: clamp(1.7rem, 3.5vw, 2.7rem);
+      margin-bottom: 16px;
+      position: relative;
+    }
+    #cta-final h2 em { color: var(--gold-light); font-style: italic; }
+    #cta-final > .wrap > p {
+      color: rgba(255,248,240,.72);
+      font-size: 1.1rem;
+      max-width: 500px; margin: 0 auto 40px;
+      line-height: 1.75;
+      position: relative;
+    }
+    #cta-final .btn { position: relative; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--choc-dark);
+      border-top: 1px solid rgba(201,168,76,.14);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-brand {
+      font-family: var(--font-h); font-size: 1.1rem;
+      color: var(--cream); margin-bottom: 8px;
+    }
+    .footer-brand span { color: var(--gold); }
+    footer p { color: rgba(255,248,240,.38); font-size: .83rem; }
+  </style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20ebooks%20de%20chocolater%C3%ADa%20%F0%9F%8D%AB"
+   class="float-wa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.113 1.524 5.845L.057 23.03a.75.75 0 0 0 .914.914l5.2-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.712 1.049 1.049-3.712-.213-.359A9.818 9.818 0 1 1 12 21.818z"/></svg>
+</a>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <div class="brand">Choco<span>Emprendé</span> by Katy</div>
+    <a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20ebooks%20%F0%9F%8D%AB"
+       target="_blank" rel="noopener" class="btn btn-gold nav-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.113 1.524 5.845L.057 23.03a.75.75 0 0 0 .914.914l5.2-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.712 1.049 1.049-3.712-.213-.359A9.818 9.818 0 1 1 12 21.818z"/></svg>
+      Escribime
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🍫 Aprendé · Creá · Emprendé</div>
+    <h1>Tu emprendimiento de chocolate empieza <em>hoy</em></h1>
+    <p class="hero-sub">
+      Recetas paso a paso para hacer bombones hermosos desde casa, aunque nunca hayas trabajado con chocolate. Y las herramientas para convertirlo en un negocio real.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20ver%20los%20ebooks%20de%20chocolater%C3%ADa%20%F0%9F%8D%AB"
+         target="_blank" rel="noopener" class="btn btn-gold btn-lg">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.113 1.524 5.845L.057 23.03a.75.75 0 0 0 .914.914l5.2-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.712 1.049 1.049-3.712-.213-.359A9.818 9.818 0 1 1 12 21.818z"/></svg>
+        Quiero empezar ahora
+      </a>
+      <a href="#productos" class="btn btn-ghost btn-lg">Ver los productos</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARA VOS -->
+<section id="para-vos">
+  <div class="wrap tc">
+    <span class="label">¿Esto es para vos?</span>
+    <h2>Creado para mujeres que quieren más</h2>
+    <p class="intro">No hace falta experiencia, ni equipos caros, ni un local. Solo ganas de aprender y dar el primer paso.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3>Querés generar ingresos desde casa</h3>
+        <p>Buscás algo flexible que se adapte a tus tiempos, sin depender de un jefe ni de un horario fijo.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🍫</div>
+        <h3>Te gusta el chocolate pero nunca lo trabajaste</h3>
+        <p>Cero experiencia, cero problema. Las guías están pensadas para empezar desde cero y avanzar con confianza.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✨</div>
+        <h3>Soñás con tener algo propio</h3>
+        <p>Querés un emprendimiento que te apasione, te dé satisfacción y que pueda crecer con vos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios">
+  <div class="wrap tc">
+    <span class="label">Qué vas a lograr</span>
+    <h2>De principiante a emprendedora, en pasos concretos</h2>
+    <p class="intro">Cada recurso está diseñado para que puedas aplicarlo desde el día uno, sin complicaciones.</p>
+    <div class="ben-grid">
+      <div class="ben-item">
+        <div class="ben-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p><strong>Hacés tus primeros bombones con seguridad</strong>Recetas claras, paso a paso, pensadas para cualquier nivel de experiencia.</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p><strong>Ampliás tu catálogo rápido</strong>Con el bono del ebook Premium llegás a más de 100 combinaciones de bombones para ofrecer.</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p><strong>Sabés cuánto cobrar y cuánto ganás</strong>La mini app te calcula costos y metas de ventas para que no trabajes a pérdida.</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p><strong>Tenés un negocio real, no solo un hobby</strong>Combinás recetas con herramientas de gestión para emprender con cabeza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos">
+  <div class="wrap tc">
+    <span class="label">Lo que podés adquirir</span>
+    <h2>Elegí lo que mejor se adapta a vos</h2>
+    <p class="intro">Cada producto se envía por WhatsApp al instante. Pagás y en minutos lo tenés.</p>
+    <div class="prod-grid">
+
+      <!-- PDF #1 -->
+      <div class="prod-card">
+        <div class="prod-emoji">🍬</div>
+        <h3>Bombones Fácil y Rentable</h3>
+        <p class="prod-desc">El punto de partida ideal. Recetas sencillas y hermosas para empezar a vender desde el primer intento.</p>
+        <ul class="feat-list">
+          <li>15 recetas de bombones</li>
+          <li>Técnicas básicas paso a paso</li>
+          <li>PDF descargable al instante</li>
+        </ul>
+        <div class="precio">
+          <span class="precio-sym">U$D</span>
+          <span class="precio-val">6</span>
+        </div>
+        <a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20adquirir%20%22Bombones%20F%C3%A1cil%20y%20Rentable%22%20(U%24D%206)%20%F0%9F%8D%AB"
+           target="_blank" rel="noopener" class="btn btn-gold btn-block">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.113 1.524 5.845L.057 23.03a.75.75 0 0 0 .914.914l5.2-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.712 1.049 1.049-3.712-.213-.359A9.818 9.818 0 1 1 12 21.818z"/></svg>
+          Lo quiero
+        </a>
+      </div>
+
+      <!-- PDF #2 -->
+      <div class="prod-card featured">
+        <div class="badge">⭐ Más completo</div>
+        <div class="prod-emoji">🍫</div>
+        <h3>Bombonería Premium</h3>
+        <p class="prod-desc">Inspirado en los sabores de los chocolates más famosos del mundo, con un bono que multiplica tu catálogo.</p>
+        <span class="bono-tag">🎁 Bono: +20 rellenos gourmet incluidos</span>
+        <ul class="feat-list">
+          <li>15 recetas de bombonería premium</li>
+          <li>Inspirado en chocolates icónicos</li>
+          <li>Bono: 20 rellenos gourmet</li>
+          <li>+100 combinaciones posibles</li>
+          <li>PDF descargable al instante</li>
+        </ul>
+        <div class="precio">
+          <span class="precio-sym">U$D</span>
+          <span class="precio-val">12</span>
+        </div>
+        <a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20adquirir%20%22Bomboner%C3%ADa%20Premium%22%20con%20bono%20(U%24D%2012)%20%F0%9F%8D%AB"
+           target="_blank" rel="noopener" class="btn btn-gold btn-block">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.113 1.524 5.845L.057 23.03a.75.75 0 0 0 .914.914l5.2-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.712 1.049 1.049-3.712-.213-.359A9.818 9.818 0 1 1 12 21.818z"/></svg>
+          Lo quiero
+        </a>
+      </div>
+
+      <!-- Mini App -->
+      <div class="prod-card">
+        <div class="prod-emoji">📱</div>
+        <h3>Mini App para Emprendedoras</h3>
+        <p class="prod-desc">La herramienta que faltaba para llevar tu negocio en orden. Calculá costos, definí metas y hacé crecer tu emprendimiento.</p>
+        <ul class="feat-list">
+          <li>Calculadora de costos de producción</li>
+          <li>Planificador de metas de ventas</li>
+          <li>Seguimiento de tu negocio</li>
+          <li>Interfaz simple e intuitiva</li>
+        </ul>
+        <div class="precio">
+          <span class="precio-sym">U$D</span>
+          <span class="precio-val">15</span>
+        </div>
+        <a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20adquirir%20la%20Mini%20App%20para%20emprendedoras%20(U%24D%2015)%20%F0%9F%8D%AB"
+           target="_blank" rel="noopener" class="btn btn-gold btn-block">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.113 1.524 5.845L.057 23.03a.75.75 0 0 0 .914.914l5.2-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.712 1.049 1.049-3.712-.213-.359A9.818 9.818 0 1 1 12 21.818z"/></svg>
+          La quiero
+        </a>
+      </div>
+
+      <!-- Bundle -->
+      <div class="prod-card bundle">
+        <div class="badge">🏆 Mejor valor</div>
+        <div class="prod-emoji">🎯</div>
+        <h3>Bundle Premium + Mini App</h3>
+        <p class="prod-desc">Todo lo que necesitás para arrancar con el pie derecho: el ebook más completo y la herramienta para gestionar tu negocio desde el día uno.</p>
+        <span class="bono-tag">Incluye: PDF Premium · Bono gourmet · Mini App</span>
+        <ul class="feat-list">
+          <li>15 recetas Bombonería Premium</li>
+          <li>Bono: 20 rellenos gourmet (+100 combinaciones)</li>
+          <li>Mini App completa para tu negocio</li>
+        </ul>
+        <div class="precio">
+          <span class="precio-sym">U$D</span>
+          <span class="precio-val">22</span>
+          <span class="precio-old">U$D 27</span>
+        </div>
+        <a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20el%20Bundle%20Premium%20%2B%20Mini%20App%20(U%24D%2022)%20%F0%9F%8D%AB"
+           target="_blank" rel="noopener" class="btn btn-gold btn-block">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.113 1.524 5.845L.057 23.03a.75.75 0 0 0 .914.914l5.2-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.712 1.049 1.049-3.712-.213-.359A9.818 9.818 0 1 1 12 21.818z"/></svg>
+          Quiero el bundle
+        </a>
+      </div>
+
+      <!-- Coming soon -->
+      <div class="prod-card soon">
+        <span class="soon-label">Próximamente</span>
+        <div class="prod-emoji">🥣</div>
+        <h3>Ebook Barritas de Cereal</h3>
+        <p class="prod-desc">Un nuevo ebook para ampliar tu emprendimiento con recetas de barritas artesanales. ¡Muy pronto!</p>
+        <a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20que%20me%20avises%20cuando%20salga%20el%20ebook%20de%20Barritas%20de%20Cereal%20%F0%9F%8C%BE"
+           target="_blank" rel="noopener" class="btn btn-outline-choc btn-block">
+          Avisame cuando salga
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="wrap">
+    <div class="sm-inner">
+      <div class="sm-visual">🍫</div>
+      <div class="sm-text">
+        <span class="label">Sobre mí</span>
+        <h2>Hola, soy Katy</h2>
+        <p>Creo recursos prácticos para que personas como vos puedan aprender repostería y chocolatería desde casa. Mis guías están pensadas para que cualquiera pueda empezar, con recetas claras y paso a paso.</p>
+        <p>Mi objetivo no es solo enseñarte a hacer bombones lindos. Es ayudarte a desarrollar una habilidad que puedas transformar en un ingreso real, desde la comodidad de tu hogar.</p>
+        <p>No necesitás equipos caros, ni un local, ni experiencia previa. Solo las ganas de empezar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="wrap">
+    <div class="divider"></div>
+    <h2>¿Lista para crear tu primer bombón <em>y empezar a venderlo</em>?</h2>
+    <p>Escribime por WhatsApp, te cuento todo y empezamos juntas. Sin vueltas, sin formularios.</p>
+    <a href="https://wa.me/5492216995301?text=Hola!%20Quiero%20empezar%20mi%20emprendimiento%20de%20chocolater%C3%ADa%20%F0%9F%8D%AB%20%C2%BFMe%20pod%C3%A9s%20contar%20m%C3%A1s%3F"
+       target="_blank" rel="noopener" class="btn btn-gold btn-lg">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.113 1.524 5.845L.057 23.03a.75.75 0 0 0 .914.914l5.2-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.359-.213-3.712 1.049 1.049-3.712-.213-.359A9.818 9.818 0 1 1 12 21.818z"/></svg>
+      Escribime por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-brand">Choco<span>Emprendé</span> by Katy</p>
+  <p>Hecho con amor desde La Plata, Argentina 🇦🇷</p>
+</footer>
+
+</body>
+</html>
