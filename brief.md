@@ -4,7 +4,7 @@
 Mujeres que quieren generar ingresos desde casa, aunque no tengan experiencia previa en chocolatería, y buscan una forma sencilla de comenzar un pequeño emprendimiento.
 
 ## Acción deseada (CTA único)
-Comprar el ebook y solicitarlo por WhatsApp.
+Solicitar y comprar el ebook por WhatsApp. El canal de venta es WhatsApp exclusivamente — no hay pasarela de pago en la landing. El botón CTA abre WhatsApp con un mensaje pre-cargado.
 
 ## Sensación que debe provocar
 Inspiración y confianza. Debe sentir que ella también puede crear bombones hermosos y convertirlos en una oportunidad de negocio.
