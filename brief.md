@@ -22,7 +22,9 @@ Contactar por WhatsApp para consultar y comprar. El canal de venta es WhatsApp e
 
 4. **Próximamente: Ebook de Barritas de Cereal** (en desarrollo — no disponible aún)
 
-**Pendiente definir:** precios individuales y posibles bundles, número de WhatsApp, y si hay testimonios de compradoras.
+## Datos de contacto y mercado
+- **WhatsApp:** +5492216995301
+- **País:** Argentina (La Plata / Gran Buenos Aires)
 
 ## Sensación que debe provocar
 Inspiración y confianza. Debe sentir que ella también puede crear bombones hermosos y convertirlos en una oportunidad de negocio.
